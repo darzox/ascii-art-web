@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ascii-art-export</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="shortcut icon" href="/static/img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <img class="picture" src="static/img/iMac1.jpg" alt="sadsad">
+    <div class="wrapper">
+    <h1>ascii-<br>
+        art-<br>
+        export.<br>
+    </h1>
+    <span class="decoration1">art</span>
+    <span class="decoration2"><span>expor</span>t</span>
+    <span class="decoration3">ascii</span>
+    <form action="http://localhost:8080/ascii-art" method="post" enctype="application/x-www-form-urlencoded">  
+        <fieldset>
+            <textarea required name="input" placeholder="type your text" id="" cols="30" rows="10"></textarea>
+        </fieldset>
+        <fieldset class="container">
+            <label>
+                <span>standard</span>
+                <input type="radio" name="font" value="standard" id="" checked>
+                <span class="radio radio1"></span>
+            </label>
+            <label>
+                <span>shadow</span>
+                <input type="radio" name="font" value="shadow" id="">
+                <span class="radio radio2"></span>
+            </label>
+            <label>
+                <span>thinkertoy</span>
+                <input type="radio" name="font" value="thinkertoy" id="">
+                <span class="radio radio3"></span>
+            </label>
+            <input type="submit">
+            <a href="/export"><img src="/static/img/load.png" alt="Export"></a>
+        </fieldset>
+    </form>
+    <pre>{{.}}</pre>
+    </div>
+</body>
+</html>

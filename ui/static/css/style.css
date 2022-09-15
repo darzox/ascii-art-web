@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Verdana, Tahoma, sans-serif;
+}
+
+body {
+    overflow-y: hidden;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    margin: 0 auto 0 70px;
+}
+
+img {
+    display: none;
+}
+
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    margin-bottom: 10px;
+}
+
+fieldset {
+    border-width: 0;
+}
+fieldset:nth-child(2) {
+
+    position: relative;
+
+}
+
+textarea {
+    resize: none;
+    box-sizing: border-box;
+    min-width: 440px;
+    min-height: 160px;
+    padding: 20px;
+
+    border-width: 2px;
+    border-color: #636262;
+    border-radius: 10px;
+}
+
+textarea:hover {
+    border : 2px solid #7BC275;
+}
+
+textarea:focus {
+    border : 2px solid #7BC275;
+    box-shadow: 0px 0px 10px 5px #7BC275
+}
+
+textarea:focus-visible {
+    outline: 0;
+    outline-width: 0;
+}
+
+pre {
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 1080px;
+    height: 530px;
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: #636262;
+    border-radius: 10px;
+
+    overflow: auto;
+} 
+
+h1 {
+    margin: 10px 0px 20px;
+
+    font-family: 'Roboto', Verdana, Tahoma, sans-serif;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 66px;
+    text-transform: lowercase;
+    color: #000000;
+}
+
+.decoration1 {
+    z-index: -1;
+    position: fixed;
+    right: 0;
+    top: -4px;
+
+    font-family: 'Roboto', Verdana, Tahoma, sans-serif;
+    font-weight: 700;
+    font-size: 200px;
+    line-height: 66px;
+    text-transform: lowercase;
+    color: #000000;
+
+    opacity: 0.2;
+}
+
+.decoration2 {
+    z-index: -1;
+    position: fixed;
+    right: -18px;
+    top: 312px;
+
+    font-family: 'Roboto', Verdana, Tahoma, sans-serif;
+    font-weight: 700;
+    font-size: 305px;
+    line-height: 79px;
+    text-transform: lowercase;
+    color: #000000;
+
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: -90px;
+
+    opacity: 0.2;
+}
+
+.decoration2 span {
+    letter-spacing: -100px;
+}
+
+
+.decoration3 {
+    display: none;
+    z-index: -1;
+    position: fixed;
+    left: -120px;
+    bottom: -265px;
+
+    font-family: 'Roboto', Verdana, Tahoma, sans-serif;
+    font-weight: 700;
+    font-size: 600px;
+    /* line-height: 0px; */
+    text-transform: lowercase;
+    color: #000000;
+
+    letter-spacing: auto;
+
+    opacity: 0.2;
+}
+
+/* Radio button styles */
+fieldset:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+input[type="radio"] {
+    opacity: 0;
+    width: 0;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #636262;
+}
+
+.radio {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border : 2px solid #636262;
+
+    position: relative;
+}
+
+.radio::after {
+    content: "";
+    display: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #7BC275;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    
+}
+
+.container input[type="radio"]:checked ~ .radio::after {
+    display: block;
+}
+
+.container input[type="radio"]:hover ~ .radio::after {
+    display: block;
+}
+
+.container input[type="radio"]:checked ~ .radio {
+    border : 2px solid #7BC275;
+}
+
+.container input[type="radio"]:hover ~ .radio {
+    border : 2px solid #7BC275;
+    box-shadow: 0px 0px 10px 5px #7BC275
+}
+
+
+input[type="submit"] {
+    width: 220px;
+    height: 50px;
+    background-color: transparent;
+    
+    border-width: 2px;
+    border-color: #636262;
+    border-radius: 10px;
+
+    font-family: 'Roboto', Verdana, Tahoma, sans-serif;
+    color: #636262;
+    text-transform: uppercase;
+    font-size: 20px;
+    border-style: solid;
+
+}
+input[type="submit"]:hover {
+    cursor: pointer;
+    border-color: #7BC275;
+    color: #7BC275;
+}
+
+@media (min-width:56px) {
+    .wrapper {
+        width: 344px;
+    }
+    form {
+        flex-direction: column;
+    }
+    textarea {
+        min-width: 344px;
+        min-height: 100px;
+
+    }
+    label {
+        width: 100px;
+    }
+    input[type="submit"] {
+        margin-top: 10px;
+    }
+    .decoration1 {
+        display: none;
+    }
+    .decoration2 {
+        display: none;
+    }
+    a img {
+        width: 60px;
+        height: 60px;
+        display: block;
+    }
+}
+
+@media (min-width:580px) {
+    .decoration1 {
+        display: none;
+    }
+    .decoration2 {
+        display: none;
+    }
+    .decoration3 {
+        display: none;
+    }
+    body {
+        overflow-y: auto;
+    }
+}
+
+
+@media (min-width: 960px) {
+    .wrapper {
+        width: 744px;
+    }
+    form {
+        flex-direction: column;
+    }
+    fieldset:nth-child(2) {
+        margin-top: 10px;
+        margin-left: 0;
+        align-items: center;
+    }
+    .decoration1 {
+        font-size: 500px;
+    }
+    label {
+        width: 120px;
+    }
+    .decoration1 {
+        display: block;
+    }
+    .decoration2 {
+        display: block;
+    }
+    .decoration3 {
+        display: none;
+    }
+    .picture {
+        display: none;
+    }
+    a img {
+        display: block;
+    }
+}
+
+@media (min-width: 1440px) {
+    .wrapper {
+        width: 1440px;
+    }
+    form {
+        flex-direction: row;
+    }
+    fieldset:nth-child(2) {
+        margin-top: 10px;
+        margin-left: 90px;
+         width: 550px;
+    }
+    .decoration1 {
+        display: block;
+    }
+    .decoration2 {
+        display: block;
+    }
+    .decoration3 {
+        display: block;
+    }
+  
+}
+
+@media (min-width:3000px) {
+    .picture {
+        display: block;
+        position: absolute;
+        top:30%;
+        left:50%;
+    }
+}
+
+h2 {
+    margin-top: 40px;
+
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 66px;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 66px;
+}
